@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("c:\\Users\\chibesa\\Desktop\\MY WORK\\websites\\SUPPORT DIRECT\\logo.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="file"],
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #f7f7f9;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .toggle-mode {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #1e1e2d;
+            color: #f5f5f5;
+        }
+
+        .dark-mode .container {
+            background-color: #2b2b3b;
+        }
+
+        .dark-mode input, 
+        .dark-mode select {
+            background-color: #3a3a4a;
+            color: #f5f5f5;
+            border: 1px solid #555;
+        }
+
+        .dark-mode input::placeholder,
+        .dark-mode label {
+            color: #d3d3d3;
+        }
+
+        .dark-mode h2 {
+            color: #f5f5f5;
+        }
+
+        .dark-mode button {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+
+        .dark-mode button:hover {
+            background-color: #003c7a;
+        }
+
+        .additional-options, .service-options, .hire-options {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-mode" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="container">
+        <form id="registrationForm" onsubmit="showPaymentOptions(event)">
+            <h2>Register Today</h2>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" required>
+            </div>
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+            </div>
+            <div class="form-group">
+                <label for="whatsappNumber">WhatsApp Number</label>
+                <input type="tel" id="whatsappNumber" name="whatsappNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="qualification">Experience</label>
+                <input type="text" id="qualification" name="qualification" required>
+            </div>
+            <div class="form-group">
+                <label for="residentialLocation">Residential Location</label>
+                <input type="text" id="residentialLocation" name="residentialLocation" required>
+            </div>
+            <div class="form-group">
+                <label for="idNumber">NRC Number</label>
+                <input type="text" id="idNumber" name="idNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="idImageCamera">Upload NRC Image</label>
+                <input type="file" id="idImageCamera" name="idImageCamera" accept="image/*" capture="camera" required>
+            </div>
+
+            <!-- Select Category -->
+            <div class="form-group">
+                <label for="category">Select Category</label>
+                <select id="category" name="category" onchange="toggleAdditionalOptions()">
+                    <option value="">--Select Category--</option>
+                    <option value="Lifestyle & Healthcare">Lifestyle & Healthcare</option>
+                    <option value="Domestic Workers">Domestic Workers</option>
+                    <option value="Educational">Educational</option>
+                    <option value="Professional">Professional</option>
+                </select>
+            </div>
+
+            <!-- Additional options when 'Professional' is selected -->
+            <div class="additional-options" id="additionalOptions">
+                <label for="otherOption">Select an Option:</label>
+                <select id="otherOption" name="otherOption" onchange="toggleOptionSelection()">
+                    <option value="">--Select Option--</option>
+                    <option value="Service">Service</option>
+                    <option value="Hire">Hire</option>
+                </select>
+            </div>
+
+            <!-- Service options dropdown -->
+            <div class="service-options" id="serviceOptions">
+                <label for="service">Select Service:</label>
+                <select id="service" name="service">
+                    <option value="">--Select Service--</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Chef/Cook">Chef/Cook</option>
+                    <option value="Cleaning Services">Cleaning Services</option>
+                    <option value="Mechanic">Mechanic</option>
+                </select>
+            </div>
+
+            <!-- Hire options dropdown -->
+            <div class="hire-options" id="hireOptions">
+                <label for="hire">Select For Hire:</label>
+                <select id="hire" name="hire">
+                    <option value="">--Select Hire Option--</option>
+                    <option value="Tables/Chairs">Tables/Chairs</option>
+                    <option value="Tents">Tents</option>
+                    <option value="Laptops">Laptops</option>
+                </select>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function toggleAdditionalOptions() {
+            const additionalOptions = document.getElementById("additionalOptions");
+            const category = document.getElementById("category").value;
+            additionalOptions.style.display = category === "Professional" ? "block" : "none";
+        }
+
+        function toggleOptionSelection() {
+            const serviceOptions = document.getElementById("serviceOptions");
+            const hireOptions = document.getElementById("hireOptions");
+            const selectedOption = document.getElementById("otherOption").value;
+
+            serviceOptions.style.display = selectedOption === "Service" ? "block" : "none";
+            hireOptions.style.display = selectedOption === "Hire" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Nearby Services</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .results-container {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .result-item {
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Search Nearby Services</h2>
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="searchQuery">Enter Skill or Location:</label>
+                <input type="text" id="searchQuery" name="searchQuery" placeholder="e.g., Medical Professional, woodlands" required>
+            </div>
+
+            <button type="submit">Search</button>
+            <div id="formError" class="error"></div>
+        </form>
+
+        <!-- Container to display results -->
+        <div id="results" class="results-container"></div>
+    </div>
+
+    <script>
+        // Simulated data fetching function to mimic fetching nearby options
+        async function fetchAvailableOptions(query) {
+            // Simulated nearby options data (in a real scenario, fetch from API or database)
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const data = [
+                        { skill: "Driver", location: "Downtown", availability: "3 nearby" },
+                        { skill: "Chef/Cook", location: "Uptown", availability: "1 nearby" },
+                        { skill: "Tech Support", location: "Midtown", availability: "5 nearby" },
+                        { skill: "Medical Professional", location: "Downtown", availability: "2 nearby" },
+                        { skill: "Security Personnel", location: "Downtown", availability: "4 nearby" },
+                        // Add more data as needed
+                    ];
+                    // Filter data based on query matching either skill or location
+                    const filteredData = data.filter(item =>
+                        item.skill.toLowerCase().includes(query.toLowerCase()) ||
+                        item.location.toLowerCase().includes(query.toLowerCase())
+                    );
+                    resolve(filteredData);
+                }, 1000); // Simulate network delay
+            });
+        }
+
+        // Display the fetched data in the results section
+        function displayAvailableOptions(options) {
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = ""; // Clear previous results
+            if (options.length > 0) {
+                options.forEach(option => {
+                    const optionDiv = document.createElement("div");
+                    optionDiv.classList.add("result-item");
+                    optionDiv.textContent = `${option.skill} available in ${option.location} (${option.availability})`;
+                    resultsContainer.appendChild(optionDiv);
+                });
+            } else {
+                resultsContainer.textContent = "No available options found.";
+            }
+        }
+
+        // Handle form submission
+        document.getElementById("searchForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const query = document.getElementById("searchQuery").value;
+
+            // Fetch and display available options based on search query
+            const availableOptions = await fetchAvailableOptions(query);
+            displayAvailableOptions(availableOptions);
+        });
+    </script>
+</body>
+</html>

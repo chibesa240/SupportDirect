@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="nrcNumber">NRC Number:</label>
+                <input type="text" id="nrcNumber" name="nrcNumber" placeholder="000000/00/0" maxlength="11" required>
+                <div id="nrcError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+            <div id="loginError" class="error"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            // Clear previous errors
+            document.getElementById("nrcError").textContent = '';
+            document.getElementById("loginError").textContent = '';
+
+            // Get form values
+            const nrcNumber = document.getElementById("nrcNumber").value;
+            const password = document.getElementById("password").value;
+
+            // NRC Validation: format should be 000000/00/0
+            const nrcPattern = /^\d{6}\/\d{2}\/\d{1}$/;
+            if (!nrcPattern.test(nrcNumber)) {
+                document.getElementById("nrcError").textContent = "Please enter a valid NRC format (000000/00/0).";
+                return;
+            }
+
+            // Placeholder for backend check (database)
+            const userExistsInDatabase = true; // Replace with actual check
+
+            if (userExistsInDatabase) {
+                // Redirect to the target page if the user exists
+                window.location.href = "c:\\Users\\chibesa\\Desktop\\MY WORK\\websites\\SUPPORT DIRECT\\form_login.html"; // Replace "your-page.html" with the target page
+            } else {
+                // Display error if user does not exist
+                document.getElementById("loginError").textContent = "User does not exist.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("c:\\Users\\chibesa\\Desktop\\MY WORK\\websites\\SUPPORT DIRECT\\logo.png"); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9); /* Slight transparency for readability */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        h2, h3 {
+            margin-bottom: 15px;
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #1e1e2d;
+            color: #f5f7fa;
+        }
+
+        .container.dark-mode {
+            background-color: rgba(43, 43, 59, 0.9);
+            color: #f5f7fa;
+        }
+
+        .toggle-mode {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-mode:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 1.5em;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            .toggle-mode {
+                top: 5px;
+                right: 10px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="modeToggle" onclick="toggleMode()">Switch to Dark Mode</button>
+        <h2>Service Request</h2>
+        <form id="serviceRequestForm">
+            <label for="firstName">Full Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="whatsappNumber">WhatsApp Number:</label>
+            <input type="tel" id="whatsappNumber" name="whatsappNumber" required>
+
+            <label for="note">Note:</label>
+            <input type="text" id="note" name="note">
+
+            <button type="submit">Submit Request</button>
+        </form>
+
+        <div id="response" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- intl-tel-input JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <script>
+        // Initialize intl-tel-input for WhatsApp number
+        const whatsappInput = document.querySelector("#whatsappNumber");
+        const iti = window.intlTelInput(whatsappInput, {
+            initialCountry: "auto",
+            geoIpLookup: function(callback) {
+                fetch("https://ipinfo.io?token=<your_token>")
+                    .then(response => response.json())
+                    .then(data => callback(data.country))
+                    .catch(() => callback("us"));
+            },
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+
+        document.getElementById("serviceRequestForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById("firstName").value;
+            const whatsappNumber = iti.getNumber();
+
+            const responseText = `
+                <h3>Request Summary</h3>
+                <p><strong>Full Name:</strong> ${firstName}</p>
+                <p><strong>WhatsApp Number:</strong> ${whatsappNumber}</p>
+            `;
+
+            document.getElementById("response").innerHTML = responseText;
+        });
+
+        function toggleMode() {
+            const body = document.body;
+            const container = document.querySelector('.container');
+            body.classList.toggle('dark-mode');
+            container.classList.toggle('dark-mode');
+            const modeToggleButton = document.getElementById('modeToggle');
+
+            if (body.classList.contains('dark-mode')) {
+                modeToggleButton.textContent = 'Switch to Light Mode';
+            } else {
+                modeToggleButton.textContent = 'Switch to Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

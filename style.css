@@ -1,0 +1,341 @@
+ /* General Styles */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styles */
+body {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    line-height: 1.6;
+    background-image: url("C:\\Users\\chibesa\\Desktop\\MY WORK\\websites\\SUPPORT DIRECT\\logo.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    background-image: url("C:\\Users\\chibesa\\Desktop\\MY WORK\\websites\\SUPPORT DIRECT\\logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header .logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.8); /* Light transparent background for readability */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: inherit;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: inherit;
+}
+
+/* About Section */
+.about {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent dark background */
+}
+
+/* Services Section */
+.services ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.services ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: inherit;
+}
+
+/* Button */
+.apply-now-button {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.apply-now-button:hover {
+    background-color: #005bb5;
+}
+
+/* Job Listings */
+.service-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.job-listing {
+    background-color: rgba(0, 115, 230, 0.9); /* Semi-transparent background */
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.job-listing a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.job-listing a:hover {
+    background-color: rgba(0, 91, 181, 0.9);
+}
+
+/* Contact Section */
+#contact {
+    background-color: rgba(5, 9, 24, 0.9);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.cta-btn {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        padding: 40px 0;
+    }
+
+    .header .logo img {
+        max-width: 150px;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    .apply-now-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .job-listing a {
+        font-size: 1rem;
+    }
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styles */
+body {
+    background-color: #000000;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease; /* Smooth transition for color changes */
+}
+
+.header .container, section, footer {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Header Section */
+.header {
+    padding: 60px 0;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+}
+
+.header .logo img {
+    max-width: 200px;
+    height: auto;
+    animation: slideIn 1s ease-out;
+}
+
+
+
+/* Accessibility and readability improvements */
+body, input, button {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.header, .about, .services, .jobs, .apply-service, #contact, footer {
+    padding: 20px;
+}
+
+/* Larger buttons and inputs for touch devices */
+button, input[type="text"], input[type="email"], textarea {
+    padding: 10px 15px;
+    font-size: 1em;
+}
+
+/* Condensed styling for mobile screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    /* Reduce padding/margins and stack elements vertically on small devices */
+    .header, .about, .services, .jobs, .apply-service, #contact, footer {
+        padding: 10px;
+    }
+
+    .apply-service form, #contact form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+/* Section Animation */
+section {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+.service-categories .job-listing {
+    background-color: #0073e6;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    animation: popUp 1s ease-out;
+}
+
+.service-categories .job-listing:hover {
+    transform: translateY(-5px);
+}
+
+.apply-now-button, .cta-btn, .service-request-button {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.apply-now-button:hover, .cta-btn:hover, .service-request-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
