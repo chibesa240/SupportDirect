@@ -65,7 +65,6 @@
             transition: border-color 0.3s;
         }
 
-       
         /* Responsive Styles */
         @media (max-width: 600px) {
             h2 {
@@ -75,18 +74,11 @@
             button {
                 font-size: 14px;
             }
-
-            .toggle-mode {
-                top: 5px;
-                right: 10px;
-                font-size: 16px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <button id="modeToggle" onclick="toggleMode()">Switch to Dark Mode</button>
         <h2>Service Request</h2>
         <form id="serviceRequestForm">
             <label for="firstName">Full Name:</label>
@@ -135,20 +127,6 @@
 
             document.getElementById("response").innerHTML = responseText;
         });
-
-        function toggleMode() {
-            const body = document.body;
-            const container = document.querySelector('.container');
-            body.classList.toggle('dark-mode');
-            container.classList.toggle('dark-mode');
-            const modeToggleButton = document.getElementById('modeToggle');
-
-            if (body.classList.contains('dark-mode')) {
-                modeToggleButton.textContent = 'Switch to Light Mode';
-            } else {
-                modeToggleButton.textContent = 'Switch to Dark Mode';
-            }
-        }
     </script>
 </body>
 </html>
