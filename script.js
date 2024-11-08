@@ -12,6 +12,13 @@ function toggleMode() {
     }
 }
 
+window.addEventListener("resize", function() {
+    if (window.innerWidth <= 768) {
+        // Adjust animation code if needed
+    } else {
+        // Ensure animations run normally on larger screens
+    }
+});
 
 // Load the theme from localStorage when the page loads
 window.addEventListener('load', () => {
