@@ -5,170 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Direct - Staffing & Recruitment Services</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Basic Styles and Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            width: 90%;
-        }
-
-        /* Header Section */
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #0077cc;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .logo img {
-            max-width: 150px;
-            margin: 0 auto;
-        }
-
-        /* About, Services, and Contact Sections */
-        section {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        h2 {
-            color: #0077cc;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        /* Featured Services */
-        .service-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .job-listing {
-            flex: 1 1 100px;
-            padding: 15px;
-            background-color: #e0f7ff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .job-listing:hover {
-            transform: scale(1.05);
-        }
-
-        .apply-now-button {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #0077cc;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .apply-now-button:hover {
-            background-color: #005fa3;
-        }
-
-        /* Contact and Apply Form Styles */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            max-width: 500px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fafafa;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #0077cc;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #005fa3;
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #0077cc;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .service-categories {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
-<body>
-    <!-- Header Section -->
+<body class="light-mode">
+
+    <!-- Header Section with Logo -->
     <header class="header">
-        <div class="container">
+        <div class="container flex-container">
             <div class="logo">
-                <img src="logo.png" alt="Support Direct Logo">
+                <img src="logo.png" alt="Support Direct Logo" class="logo-img">
             </div>
-            <h1>Support Direct - Staffing & Recruitment</h1>
+            <nav class="nav-links">
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#apply-service">Apply</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- About Us Section with Background Gradient -->
     <section id="about" class="about">
         <div class="container">
             <h2>About Us</h2>
@@ -176,24 +31,25 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section with Icons -->
     <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2>
-            <p>Whether you need temporary or full-time support, we've got you covered.</p>
+            <h2>What Help Do You Need?</h2>
+            <p>Whether you need someone for a short time or a long-term solution, we’re here to assist:</p>
             <ul>
-                <li><strong>Temporary/Full-Time Support:</strong> Find professionals for any commitment length.</li>
-                <li><strong>Consulting Services:</strong> Advice on hiring strategies.</li>
-                <li><strong>Screening & Assessment:</strong> Quality-vetted professionals.</li>
+                <li><i class="fas fa-user-clock"></i><strong> Temporary/Full-Time Support:</strong> Find professionals for short or long commitments.</li>
+                <li><i class="fas fa-comments"></i><strong> Consulting Services:</strong> Get advice on the best hiring strategies.</li>
+                <li><i class="fas fa-check-circle"></i><strong> Screening & Assessment:</strong> We carefully vet every professional for quality.</li>
             </ul>
         </div>
     </section>
 
-    <!-- Featured Services Section -->
+    <!-- Featured Services Section with Responsive Cards -->
     <section class="jobs">
         <div class="container">
             <h2>Featured Services</h2>
-            <div class="service-categories">
+            <p>Here are some types of skilled professionals we can help you connect with:</p>
+            <div class="service-categories flex-container">
                 <div class="job-listing">
                     <a href="service_request_form.html" class="apply-now-button">Lifestyle & Healthcare</a>
                 </div>
@@ -201,38 +57,65 @@
                     <a href="service_request_form.html" class="apply-now-button">Domestic Workers</a>
                 </div>
                 <div class="job-listing">
-                    <a href="service_request_form.html" class="apply-now-button">Educational</a>
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Educational</a>
                 </div>
                 <div class="job-listing">
-                    <a href="service_request_form.html" class="apply-now-button">Professional</a>
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Professional</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Apply Service Section with Form -->
+    <section id="apply-service" class="apply-service">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p>We're here to help you find the right support. Feel free to get in touch!</p>
+            <h2>Want to Offer Your Service?</h2>
+            <p>Do you have skills in any of the areas listed above? Fill out the form below if you'd like to offer your services. <strong>Note:</strong> A K150 fee is charged only to accepted applicants, who will receive an email with login details. This fee is paid during registration.</p>
             <form action="#" method="post">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <label for="applicant-name">Name:</label>
+                <input type="text" id="applicant-name" name="applicant-name" required>
+
+                <label for="applicant-email">Email:</label>
+                <input type="email" id="applicant-email" name="applicant-email" required>
+
+                <label for="service-offered">Describe the Service You Offer:</label>
+                <textarea id="service-offered" name="service-offered" required></textarea>
+
+                <button type="submit" class="cta-btn">Submit Application</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you’re unsure of what help you need, get in touch with us! We’re here to guide you in finding the right support.</p>
+            <form action="#" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="cta-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section with Icons -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Support Direct. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+            <a href="https://chibesa240.github.io/SupportDirect/log_in.html" class="service-request-button">LOG IN</a>
         </div>
     </footer>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
