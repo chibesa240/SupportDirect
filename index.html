@@ -6,111 +6,124 @@
     <title>Support Direct - Staffing & Recruitment Services</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    <body class="light-mode">
- 
-    <!-- Header Section with Logo -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" alt="Support Direct Logo">
+<body class="light-mode">
+
+<!-- Header Section with Logo -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Support Direct Logo">
+        </div>
+    </div>
+</header>
+
+<!-- About Us Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>🌍 We connect people with skilled professionals across diverse fields. Whether you're looking for assistance with your daily needs or expert consultations, we're here to make finding the right help easy and fast!</p>
+    </div>
+</section>
+
+<!-- Services Section with Icons -->
+<section id="services" class="services">
+    <div class="container">
+        <h2>What Help Do You Need?</h2>
+        <p>🔍 Find support for any commitment duration, from temporary help to long-term solutions:</p>
+        <ul>
+            <li><strong>🔧 Temporary/Full-Time Support:</strong> Flexible professionals for your unique requirements.</li>
+            <li><strong>💼 Consulting Services:</strong> Expert advice on effective hiring strategies.</li>
+            <li><strong>✅ Screening & Assessment:</strong> Every professional is carefully vetted for quality and reliability.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Featured Services Section with Modern Buttons -->
+<section class="jobs">
+    <div class="container">
+        <h2>Featured Services</h2>
+        <p>Discover skilled professionals in the following fields:</p>
+        <div class="service-categories">
+            <div class="job-listing">
+                <a href="service_request_form.html" class="apply-now-button">👩‍⚕️ Lifestyle & Healthcare</a>
+            </div>
+
+            <div class="job-listing">
+                <a href="service_request_form.html" class="apply-now-button">🏠 Domestic Workers</a>
+            </div>
+
+            <div class="job-listing">
+                <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">📚 Educational</a>
+            </div>
+
+            <div class="job-listing">
+                <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">🧑‍💼 Professional</a>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We connect people with skilled professionals across different fields. If you need help finding the right person, we’re here to make it easy and fast for you!</p>
-        </div>
-    </section>
+<!-- Offer a Service Section -->
+<section id="apply-service" class="apply-service">
+    <div class="container">
+        <h2>Want to Offer Your Service?</h2>
+        <p>💼 If you have expertise in any of these areas, we’d love to have you join us! Complete the form below to submit your application. <strong>Note:</strong> Only accepted applicants are asked to pay a K150 registration fee upon receiving an email confirmation.</p>
+        <form action="#" method="post">
+            <label for="applicant-name">Name:</label>
+            <input type="text" id="applicant-name" name="applicant-name" required>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>What Help Do You Need?</h2>
-            <p>Whether you need someone for a short time or a long-term solution, we’re here to assist:</p>
-            <ul>
-                <li><strong>Temporary/Full-Time Support:</strong> Find professionals for short or long commitments.</li>
-                <li><strong>Consulting Services:</strong> Get advice on the best hiring strategies.</li>
-                <li><strong>Screening & Assessment:</strong> We carefully vet every professional for quality.</li>
-            </ul>
-        </div>
-    </section>
+            <label for="applicant-email">Email:</label>
+            <input type="email" id="applicant-email" name="applicant-email" required>
 
-    <!-- Featured Services Section -->
-    <section class="jobs">
-        <div class="container">
-            <h2>Featured Services</h2>
-            <p>Here are some types of skilled professionals we can help you connect with:</p>
-            <div class="service-categories">
-                <div class="job-listing">
-                    <a href="service_request_form.html" class="apply-now-button">Lifestyle & Healthcare</a>
-                </div>
+            <label for="service-offered">Describe the Service You Offer:</label>
+            <textarea id="service-offered" name="service-offered" required></textarea>
 
-                <div class="job-listing">
-                    <a href="service_request_form.html" class="apply-now-button">Domestic Workers</a>
-                </div>
+            <button type="submit" class="cta-btn">Submit Application</button>
+        </form>
+    </div>
+</section>
 
-                <div class="job-listing">
-                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Educational</a>
-                </div>
+<!-- Contact Us Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>🤝 Unsure about what help you need? Get in touch, and we’ll guide you to the right support.</p>
+        <form action="#" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                <div class="job-listing">
-                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Professional</a>
-                </div>
-            </div>
-        </div>
-    </section>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
 
-    <!-- Offer a Service Section -->
-    <section id="apply-service" class="apply-service">
-        <div class="container">
-            <h2>Want to Offer Your Service?</h2>
-            <p>Do you have skills in any of the areas listed above? Fill out the form below if you'd like to offer your services. <strong>Note:</strong> A K150 fee is charged only to accepted applicants, who will receive an email with login details. This fee is paid during registration.</p>
-            <form action="#" method="post">
-                <label for="applicant-name">Name:</label>
-                <input type="text" id="applicant-name" name="applicant-name" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
-                <label for="applicant-email">Email:</label>
-                <input type="email" id="applicant-email" name="applicant-email" required>
+            <button type="submit" class="cta-btn">Send Message</button>
+        </form>
+    </div>
+</section>
 
-                <label for="service-offered">Describe the Service You Offer:</label>
-                <textarea id="service-offered" name="service-offered" required></textarea>
+<!-- Footer Section with Smooth Scrolling Links -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Support Direct. All rights reserved.</p>
+        <a href="https://chibesa240.github.io/SupportDirect/log_in.html" class="service-request-button">LOG IN</a>
+    </div>
+</footer>
 
-                <button type="submit" class="cta-btn">Submit Application</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you’re unsure of what help you need, get in touch with us! We’re here to guide you in finding the right support.</p>
-            <form action="#" method="post">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit" class="cta-btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Support Direct. All rights reserved.</p>
-            <a href="https://chibesa240.github.io/SupportDirect/log_in.html" class="service-request-button">LOG IN</a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<!-- Script for Mobile Compatibility and Smooth Scroll -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+<script src="script.js"></script>
 </body>
-</html> 
+</html>
