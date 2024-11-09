@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Base styling for responsive layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
         /* Compact Navigation Links Style */
         .top-nav {
-            background-color: #0056b3; /* Matches Featured Services background color */
+            background-color: #0056b3;
             padding: 10px 0;
             text-align: center;
         }
 
         .top-nav a {
-            color: #ffffff; /* White for visibility */
+            color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-size: 16px;
@@ -24,22 +31,26 @@
         }
 
         .top-nav a:hover {
-            color: #ffcc00; /* Hover color to enhance interactivity */
+            color: #ffcc00;
         }
 
-        /* Additional styling for uniformity */
+        /* Responsive container */
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 20px;
+            width: 90%;
         }
 
+        /* Section headings */
         h2 {
-            color: #0056b3; /* Matches the navigation and featured services theme */
+            color: #0056b3;
+            text-align: center;
         }
 
+        /* Button styles */
         .cta-btn, .apply-now-button {
-            background-color: #0056b3; /* Matches featured services */
+            background-color: #0056b3;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -47,11 +58,117 @@
             cursor: pointer;
             text-decoration: none;
             border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s;
         }
 
         .cta-btn:hover, .apply-now-button:hover {
-            background-color: #ffcc00; /* Yellow hover effect */
+            background-color: #ffcc00;
             color: #0056b3;
+        }
+
+        /* Responsive logo */
+        .logo img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Service Categories */
+        .service-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .job-listing {
+            flex: 1 1 200px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        /* Responsive form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            /* Stack links vertically on smaller screens */
+            .top-nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            /* Adjust container padding for smaller screens */
+            .container {
+                padding: 10px;
+            }
+
+            /* Make job listings full-width on smaller screens */
+            .job-listing {
+                flex: 1 1 100%;
+            }
+
+            .cta-btn, .apply-now-button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            /* Footer adjustments for mobile */
+            footer {
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-nav a {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            /* Adjust font and padding on smaller devices */
+            .cta-btn, .apply-now-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            form input, form textarea {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -162,10 +279,9 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 Support Direct. All rights reserved.</p>
-            <a href="log_in.html" class="service-request-button">LOG IN</a>
+            <a href="log_in.html">Log In</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
