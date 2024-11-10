@@ -19,28 +19,28 @@ body {
     overflow-x: hidden;
 }
 
-/* Header Container (flex direction change for smaller screens) */
+/* Header Styles */
+.header {
+    background-image: url("logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+    color: #fff;
+}
+
 .header .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;  /* Stack elements vertically */
+    flex-direction: column;
 }
 
-/* Make the logo responsive in header */
 .header .logo img {
     max-width: 200px;
     height: auto;
 }
-
-/* Job Listings Grid */
-.service-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Auto-adjustable columns */
-    gap: 20px;
-    margin-top: 20px;
-}
-
 
 /* Section Styles */
 section {
@@ -173,88 +173,6 @@ form {
 .cta-btn:hover {
     background-color: #005bb5;
 }
-/* Form Styling for Mobile */
-form {
-    display: grid;
-    grid-template-columns: 1fr;  /* Single column layout for mobile */
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-button, input[type="text"], input[type="email"], textarea {
-    padding: 12px;
-    font-size: 1em;
-    width: 100%;  /* Make input fields and buttons stretch to the full width */
-}
-
-/* Larger buttons for touch devices */
-button, input[type="text"], input[type="email"], textarea {
-    padding: 12px 15px;
-    font-size: 1.1rem; /* Slightly bigger for easier interaction */
-}
-
-/* Button Hover Effects */
-.apply-now-button:hover, .cta-btn:hover {
-    background-color: #005bb5;
-    transform: scale(1.05);  /* Slight scale-up effect for touch-friendly buttons */
-}
-/* For Tablets or Smaller Screens (<= 768px) */
-@media (max-width: 768px) {
-    .header {
-        padding: 40px 0;
-    }
-
-    /* Logo size adjustment for smaller screens */
-    .header .logo img {
-        max-width: 150px;  /* Smaller logo for mobile */
-    }
-
-    /* Padding and margin adjustments for sections */
-    section {
-        padding: 20px 10px;
-    }
-
-    .apply-now-button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    .job-listing a {
-        font-size: 1rem;
-    }
-}
-
-/* For Mobile Phones (<= 600px) */
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
-
-    /* Stack elements vertically on small screens */
-    .header, .about, .services, .jobs, .apply-service, #contact, footer {
-        padding: 10px;
-    }
-
-    /* Stack forms vertically */
-    .apply-service form, #contact form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Make sure buttons are touch-friendly */
-    .cta-btn, .apply-now-button {
-        width: 100%; /* Full-width buttons */
-        font-size: 1.1rem;
-    }
-}
-
 
 /* Footer */
 footer {
@@ -299,24 +217,19 @@ footer p {
     font-family: 'Arial', sans-serif;
 }
 
-/* Body Background */
+/* Body Styles */
 body {
-    background-image: url("logo.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;  /* Ensure the background stays fixed while scrolling */
+    background-color: #000000;
+    color: #333;
+    line-height: 1.6;
     font-size: 16px;
     overflow-x: hidden;
+    transition: background-color 0.5s ease; /* Smooth transition for color changes */
 }
 
-/* Header */
-.header {
-    background-image: url("logo.png");
-    background-size: contain; /* Adjusts image to fit without stretching */
-    background-repeat: no-repeat;
-    background-position: center;
+.header .container, section, footer {
+    animation: fadeIn 1s ease-out;
 }
-
 
 /* Header Section */
 .header {
@@ -410,38 +323,6 @@ section:hover {
     background-color: #005bb5;
     transform: scale(1.05);
 }
-
-@keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Add smoother animations on smaller devices */
-@media (max-width: 600px) {
-    .header .logo img {
-        animation: slideIn 1.5s ease-out; /* Slightly slower for mobile */
-    }
-
-    /* Reduce scale-up effect for smaller screens */
-    .service-categories .job-listing:hover {
-        transform: translateY(-3px);
-    }
-}
-body {
-    font-size: 16px; /* Base font size */
-    line-height: 1.6;
-}
-
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;  /* Smaller font size for small screens */
-    }
-
-    section h2 {
-        font-size: 2rem; /* Smaller header size */
-    }
-}
-
 
 /* Keyframe Animations */
 @keyframes fadeIn {
