@@ -1,132 +1,286 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Request</title>
+    <title>Support Direct - Staffing & Recruitment Services</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- intl-tel-input CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
-
     <style>
-        /* Basic Reset */
-        * {
+        /* Base styling for responsive layout */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+        }
+
+        /* Compact Navigation Links Style */
+        .top-nav {
+            background-color: #0056b3;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .top-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Responsive container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+        }
+
+        /* Section headings */
+        h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+
+        /* Button styles */
+        .cta-btn, .apply-now-button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover, .apply-now-button:hover {
+            background-color: #ffcc00;
+            color: #0056b3;
+        }
+
+        /* Responsive logo */
+        .logo img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Service Categories */
+        .service-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .job-listing {
+            flex: 1 1 200px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        /* Responsive form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url("logo.png"); /* Replace with your image path */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #333;
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 95%;
-            max-width: 500px;
-            margin: 20px auto;
-            background: rgba(255, 255, 255, 0.9); /* Slight transparency for readability */
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        h2, h3 {
-            margin-bottom: 15px;
+        /* Footer styles */
+        footer {
+            background-color: #0056b3;
+            color: white;
             text-align: center;
-            color: #333;
+            padding: 20px 0;
         }
 
-        label {
-            margin-bottom: 5px;
-            display: block;
+        footer p {
+            margin: 5px 0;
         }
 
-        input[type="text"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            transition: border-color 0.3s;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 1.5em;
+        /* Responsive media queries */
+        @media (max-width: 768px) {
+            /* Stack links vertically on smaller screens */
+            .top-nav a {
+                display: block;
+                margin: 10px 0;
             }
 
-            button {
+            /* Adjust container padding for smaller screens */
+            .container {
+                padding: 10px;
+            }
+
+            /* Make job listings full-width on smaller screens */
+            .job-listing {
+                flex: 1 1 100%;
+            }
+
+            .cta-btn, .apply-now-button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            /* Footer adjustments for mobile */
+            footer {
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-nav a {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            /* Adjust font and padding on smaller devices */
+            .cta-btn, .apply-now-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            form input, form textarea {
                 font-size: 14px;
             }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h2>Service Request</h2>
-        <form id="serviceRequestForm">
-            <label for="firstName">Full Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+<body class="light-mode">
 
-            <label for="whatsappNumber">WhatsApp Number:</label>
-            <input type="tel" id="whatsappNumber" name="whatsappNumber" required>
+    <!-- Compact Navigation Links -->
+    <nav class="top-nav">
+        <a href="#about">About Us</a>
+        <a href="#services">What Help Do You Need?</a>
+        <a href="#featured-services">Featured Services</a>
+        <a href="#apply-service">Want to Offer a Service?</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
 
-            <label for="note">Note:</label>
-            <input type="text" id="note" name="note">
+    <!-- Header Section with Logo -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Support Direct Logo">
+            </div>
+        </div>
+    </header>
 
-            <button type="submit">Submit Request</button>
-        </form>
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We connect people with skilled professionals across different fields. If you need help finding the right person, we’re here to make it easy and fast for you!</p>
+        </div>
+    </section>
 
-        <div id="response" style="margin-top: 20px;"></div>
-    </div>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>What Help Do You Need?</h2>
+            <p>Whether you need someone for a short time or a long-term solution, we’re here to assist:</p>
+            <ul>
+                <li><strong>Temporary/Full-Time Support:</strong> Find professionals for short or long commitments.</li>
+                <li><strong>Consulting Services:</strong> Get advice on the best hiring strategies.</li>
+                <li><strong>Screening & Assessment:</strong> We carefully vet every professional for quality.</li>
+            </ul>
+        </div>
+    </section>
 
-    <!-- intl-tel-input JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="jobs">
+        <div class="container">
+            <h2>Featured Services</h2>
+            <p>Here are some types of skilled professionals we can help you connect with:</p>
+            <div class="service-categories">
+                <div class="job-listing">
+                    <a href="service_request_form.html" class="apply-now-button">Lifestyle & Healthcare</a>
+                </div>
+                <div class="job-listing">
+                    <a href="service_request_form.html" class="apply-now-button">Domestic Workers</a>
+                </div>
+                <div class="job-listing">
+                    <a href="service_request_form.html" class="apply-now-button">Educational</a>
+                </div>
+                <div class="job-listing">
+                    <a href="service_request_form.html" class="apply-now-button">Professional</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        // Initialize intl-tel-input for WhatsApp number
-        const whatsappInput = document.querySelector("#whatsappNumber");
-        const iti = window.intlTelInput(whatsappInput, {
-            initialCountry: "auto",
-            geoIpLookup: function(callback) {
-                fetch("https://ipinfo.io?token=<your_token>")
-                    .then(response => response.json())
-                    .then(data => callback(data.country))
-                    .catch(() => callback("us"));
-            },
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-        });
+    <!-- Offer a Service Section -->
+    <section id="apply-service" class="apply-service">
+        <div class="container">
+            <h2>Want to Offer Your Service?</h2>
+            <p>Do you have skills in any of the areas listed above? Fill out the form below if you'd like to offer your services. <strong>Note:</strong> A K150 fee is charged only to accepted applicants, who will receive an email with login details. This fee is paid during registration.</p>
+            <form action="#" method="post">
+                <label for="applicant-name">Name:</label>
+                <input type="text" id="applicant-name" name="applicant-name" required>
 
-        document.getElementById("serviceRequestForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+                <label for="applicant-email">Email:</label>
+                <input type="email" id="applicant-email" name="applicant-email" required>
 
-            const firstName = document.getElementById("firstName").value;
-            const whatsappNumber = iti.getNumber();
+                <label for="service-offered">Describe the Service You Offer:</label>
+                <textarea id="service-offered" name="service-offered" required></textarea>
 
-            const responseText = `
-                <h3>Request Summary</h3>
-                <p><strong>Full Name:</strong> ${firstName}</p>
-                <p><strong>WhatsApp Number:</strong> ${whatsappNumber}</p>
-            `;
+                <button type="submit" class="cta-btn">Submit Application</button>
+            </form>
+        </div>
+    </section>
 
-            document.getElementById("response").innerHTML = responseText;
-        });
-    </script>
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you’re unsure of what help you need, get in touch with us! We’re here to guide you in finding the right support.</p>
+            <form action="#" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="cta-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Support Direct. All rights reserved.</p>
+            <a href="log_in.html">Log In</a>
+        </div>
+    </footer>
+
 </body>
 </html>
