@@ -8,7 +8,7 @@
 
 /* Body Styles */
 body {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 91, 181, 0.9);
     color: #333;
     line-height: 1.6;
     background-image: url("logo.png");
@@ -45,7 +45,7 @@ body {
 /* Section Styles */
 section {
     padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.8); /* Light transparent background for readability */
+    background: rgba(0, 91, 181, 0.9); /* Light transparent background for readability */
     border-radius: 8px;
     margin-bottom: 20px;
     text-align: center;
@@ -69,7 +69,7 @@ section p {
 
 /* About Section */
 .about {
-    background-color: rgba(255, 255, 255, 0.8); /* Transparent dark background */
+    background-color:rgba(0, 91, 181, 0.9); /* Transparent dark background */
 }
 
 /* Services Section */
@@ -124,12 +124,12 @@ section p {
 }
 
 .job-listing a:hover {
-    background-color: rgba(0, 91, 181, 0.9);
+    background-color: rgba(132, 153, 12, 0.9);
 }
 
 /* Contact Section */
 #contact {
-    background-color: rgba(5, 9, 24, 0.9);
+    background-color: rgba(0, 91, 181, 0.9);
 }
 
 form {
@@ -286,7 +286,7 @@ button, input[type="text"], input[type="email"], textarea {
 /* Section Animation */
 section {
     padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background:  rgba(0, 91, 181, 0.9);
     border-radius: 8px;
     margin-bottom: 20px;
     text-align: center;
