@@ -64,7 +64,7 @@
         }
 
         .cta-btn:hover, .apply-now-button:hover {
-            background-color: #ffcc00;
+            background-color: #1b4e4c;
             color: #0056b3;
         }
 
@@ -196,20 +196,16 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Us</h2>
-            <p>We connect people with skilled professionals across different fields. If you need help finding the right person, we’re here to make it easy and fast for you!</p>
+            <p>Our purpose is to link proficient individuals to clients.</p>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2>What Help Do You Need?</h2>
-            <p>Whether you need someone for a short time or a long-term solution, we’re here to assist:</p>
-            <ul>
-                <li><strong>Temporary/Full-Time Support:</strong> Find professionals for short or long commitments.</li>
-                <li><strong>Consulting Services:</strong> Get advice on the best hiring strategies.</li>
-                <li><strong>Screening & Assessment:</strong> We carefully vet every professional for quality.</li>
-            </ul>
+            <h2>find who you are looking for</h2>
+            <p>Search for the personalized service that you need.</p>
+            
         </div>
     </section>
 
@@ -217,43 +213,156 @@
     <section id="featured-services" class="jobs">
         <div class="container">
             <h2>Featured Services</h2>
-            <p>Here are some types of skilled professionals we can help you connect with:</p>
+            <p>Here are some types of skilled professionals we can connect you with:</p>
             <div class="service-categories">
                 <div class="job-listing">
-                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Lifestyle & Healthcare</a>
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Health</a>
                 </div>
                 <div class="job-listing">
-                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Domestic Workers</a>
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">House hold</a>
                 </div>
                 <div class="job-listing">
-                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Educational</a>
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Catering</a>
                 </div>
                 <div class="job-listing">
-                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Professional</a>
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Education</a>
+                </div><div class="job-listing">
+
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Pets</a>
+                </div><div class="job-listing">
+
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Children's recreation</a>
+                </div><div class="job-listing">
+
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Lifestyle</a>
+                </div><div class="job-listing">
+
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">Personal escort</a>
+                </div><div class="job-listing">
+
+                    <a href="https://chibesa240.github.io/SupportDirect/service_request_form.html" class="apply-now-button">For hire</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Offer a Service Section -->
-    <section id="apply-service" class="apply-service">
-        <div class="container">
-            <h2>Want to Offer Your Service?</h2>
-            <p>Do you have skills in any of the areas listed above? Fill out the form below if you'd like to offer your services. <strong>Note:</strong> A K150 fee is charged only to accepted applicants, who will receive an email with login details. This fee is paid during registration.</p>
-            <form action="#" method="post">
-                <label for="applicant-name">Name:</label>
-                <input type="text" id="applicant-name" name="applicant-name" required>
+<!-- Offer a Service Section -->
+<section id="apply-service" class="apply-service">
+    <div class="container">
+        <h2>How it works</h2>
+        <p>Registration <strong>Note:</strong> A K150 fee is charged only to accepted applicants, who will receive an email with login details. This fee is paid during registration.</p>
+        <form action="#" method="post">
+            <label for="applicant-name">Name:</label>
+            <input type="text" id="applicant-name" name="applicant-name" required>
 
-                <label for="applicant-email">Email:</label>
-                <input type="email" id="applicant-email" name="applicant-email" required>
+            <label for="applicant-email">Email:</label>
+            <input type="email" id="applicant-email" name="applicant-email" required>
 
-                <label for="service-offered">Describe the Service You Offer:</label>
+            <label for="service-category">Select a Category:</label>
+            <select id="service-category" name="service-category" required onchange="toggleDescriptionField()">
+                <option value="" disabled selected>-- Select a Category --</option>
+                <optgroup label="Health">
+                    <option value="nursing-care">Nursing Care</option>
+                    <option value="physical-therapy">Physical Therapy</option>
+                    <option value="medical-social-worker">Medical Social Worker</option>
+                    <option value="occupational-therapy">Occupational Therapy</option>
+                    <option value="doctor-care">Doctor Care</option>
+                    <option value="speech-language-pathology">Speech-Language Pathology</option>
+                    <option value="nutritional-support">Nutritional Support</option>
+                    <option value="laboratory-technician">Laboratory Technician</option>
+                    <option value="ambulance-service">Ambulance Service</option>
+                </optgroup>
+                <optgroup label="Household">
+                    <option value="cleaning">Cleaning</option>
+                    <option value="gardening">Gardening</option>
+                    <option value="pool">Pool</option>
+                    <option value="gate">Gate</option>
+                    <option value="electric-fence">Electric Fence</option>
+                </optgroup>
+                <optgroup label="Education">
+                    <option value="teacher-primary-secondary">Teacher (Primary/Secondary)</option>
+                    <option value="private-tutor">Private Tutor</option>
+                    <option value="music-teacher">Music Teacher</option>
+                    <option value="art-theater-dance-teacher">Art, Theater, Dance Teacher</option>
+                </optgroup>
+                <optgroup label="Lifestyle">
+                    <option value="none">click here</option>
+                </optgroup>
+            </select>
+
+            <!-- Description Field (Initially Hidden) -->
+            <div id="lifestyle-description" style="display: none;">
+                <label for="service-offered">Describe the Lifestyle Service You Offer:</label>
                 <textarea id="service-offered" name="service-offered" required></textarea>
+            </div>
 
-                <button type="submit" class="cta-btn">Submit Application</button>
-            </form>
-        </div>
-    </section>
+            <button type="submit" class="cta-btn">Submit Application</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    function toggleDescriptionField() {
+        const category = document.getElementById("service-category").value;
+        const descriptionField = document.getElementById("lifestyle-description");
+        
+        // Show the "Describe the Lifestyle Service" field only if "Lifestyle" is selected
+        if (category === "none") {
+            descriptionField.style.display = "block";
+        } else {
+            descriptionField.style.display = "none";
+        }
+    }
+</script>
+
+
+<script>
+    function toggleDescriptionField() {
+        // Check if the "Lifestyle" category is selected
+        const checkboxes = document.querySelectorAll('input[name="category"]:checked');
+        const descriptionField = document.getElementById("lifestyle-description");
+        let isLifestyleSelected = false;
+
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.value === "lifestyle") {
+                isLifestyleSelected = true;
+            }
+        });
+
+        // Show or hide the description field
+        if (isLifestyleSelected) {
+            descriptionField.style.display = "block";
+        } else {
+            descriptionField.style.display = "none";
+        }
+    }
+</script>
+
+            <!-- Description Field (Initially Hidden) -->
+            <div id="lifestyle-description" style="display: none;">
+                <label for="service-offered">Describe the Lifestyle Service You Offer:</label>
+                <textarea id="service-offered" name="service-offered" required></textarea>
+            </div>
+
+            
+        </form>
+    </div>
+</section>
+
+<script>
+    function toggleDescriptionField() {
+        const category = document.getElementById("service-category").value;
+        const descriptionField = document.getElementById("lifestyle-description");
+        
+        // Show the "Describe the Lifestyle Service" field only if "Lifestyle" is selected
+        if (category === "none") {
+            descriptionField.style.display = "block";
+        } else {
+            descriptionField.style.display = "none";
+        }
+    }
+</script>
+
 
     <!-- Contact Us Section -->
     <section id="contact">
