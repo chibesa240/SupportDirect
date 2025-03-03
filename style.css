@@ -339,3 +339,33 @@ section:hover {
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('happy dance.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: moveBackground 20s linear infinite alternate;
+}
+
+/* Animate background movement */
+@keyframes moveBackground {
+    0% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 50% 60%;
+    }
+}
+
+/* Responsive background effect */
+@media (max-width: 768px) {
+    body {
+        animation: moveBackgroundMobile 15s linear infinite alternate;
+    }
+
+    @keyframes moveBackgroundMobile {
+        0% { background-position: 50% 50%; }
+        100% { background-position: 50% 55%; }
+    }
+}
